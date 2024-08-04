@@ -76,6 +76,11 @@
     justify-content: center;
   }
 
+  .subbox a {
+    text-decoration: none;
+    /* 링크 밑줄 제거 */
+  }
+
   .form {
     width: 300px;
     height: 35px;

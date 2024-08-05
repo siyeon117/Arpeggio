@@ -2,6 +2,7 @@
 .container {
   width: 100%;
   height: auto;
+  background-color: beige
 }
 
 /* PC 스타일 */
@@ -99,13 +100,16 @@
   .button {
     padding-top: 30px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    /* 버튼들을 나란히 배치 */
+    justify-content: center;
     align-items: center;
   }
 
   .button img {
     width: 40px;
-    margin: 0 auto;
+    margin: 0 30px;
+    /* 버튼 사이의 간격 */
   }
 
   .button span {

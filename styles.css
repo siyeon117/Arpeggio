@@ -32,6 +32,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 20px;
   }
 
   .logo {
@@ -40,7 +41,7 @@
   }
 
   .mainbox {
-    padding-top: 10px;
+    padding-top: 20px;
     display: flex;
     flex-direction: row; /* 가로 방향으로 배치 */
     flex-wrap: wrap; /* 콘텐츠가 넘치면 다음 줄로 자동 줄 바꿈 */
@@ -55,22 +56,22 @@
     padding-top: 36.25%; /* 16:9 비율 (9 / 16 * 100) */
     margin-bottom: 2%;
     margin-right: 2%;
-}
+  }
 
-.video-container:nth-child(2n) {
+  .video-container:nth-child(2n) {
     margin-right: 0;
-}
+  }
 
-.video-container iframe {
+  .video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-}
+  }
 
   .subbox {
-    padding-top: 60px;
+    padding-top: 30px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -79,15 +80,6 @@
   .subbox a {
     text-decoration: none;
     /* 링크 밑줄 제거 */
-  }
-
-  .textbox {
-    padding-top: 30px;
-    text-align: center;
-    color: gray;
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
   }
 
   .form {
@@ -106,7 +98,8 @@
   }
 
   .button {
-    padding-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: row;
     /* 버튼들을 나란히 배치 */
@@ -115,7 +108,7 @@
   }
 
   .button img {
-    width: 40px;
+    width: 60px;
     margin: 0 30px;
     /* 버튼 사이의 간격 */
   }
@@ -126,8 +119,9 @@
     margin-top: 10px;
   }
 
-  .more {
-    padding-top: 30px;
+  .more,
+  .textbox {
+    padding-top: 40px;
     text-align: center;
     color: gray;
     font-size: 15px;

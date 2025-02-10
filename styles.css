@@ -42,33 +42,32 @@
   .mainbox {
     padding-top: 50px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row; /* 가로 방향으로 배치 */
+    flex-wrap: wrap; /* 콘텐츠가 넘치면 다음 줄로 자동 줄 바꿈 */
+    justify-content: center; /* 가로 가운데 정렬 */
   }
 
   .video-container {
-    width: 100%;
+    width: 48%; /* 두 개의 비디오가 한 줄에 들어가도록 너비 조정 */
     max-width: 340px;
     position: relative;
     overflow: hidden;
-    padding-top: 56.25%;
-    /* 16:9 비율을 유지하기 위한 패딩 값 */
-    margin-bottom: 50px;
-    /* 각 비디오 컨테이너 간의 간격 설정 */
-  }
+    padding-top: 56.25%; /* 16:9 비율 (9 / 16 * 100) */
+    margin-bottom: 2%;
+    margin-right: 2%;
+}
 
-  .video-container:last-child {
-    margin-bottom: 0;
-    /* 마지막 비디오에는 간격을 추가하지 않음 */
-  }
+.video-container:nth-child(2n) {
+    margin-right: 0;
+}
 
-  .video-container iframe {
+.video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-  }
+}
 
   .subbox {
     padding-top: 60px;

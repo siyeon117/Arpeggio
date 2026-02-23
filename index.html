@@ -15,9 +15,12 @@
     </header>
 
     <main>
-      <div class="textbox">arpe best</div>
+      <div class="textbox">
+        <button id="onBtn" onclick="showOn()">ARPE ON</button>
+        <button id="offBtn" onclick="showOff()">ARPE OFF</button>
+      </div>
 
-      <section class="mainbox">
+      <section class="mainbox" id="onSection">
         <div class="video-container">
           <iframe class="video" src="https://www.youtube.com/embed/HWJ519QGPg8?si=W5zNMK5IZ5xL_weL&amp;controls=0"
             title="YouTube video player" frameborder="0"
@@ -26,38 +29,56 @@
         </div>
         <div class="video-container">
           <iframe class="video" src="https://www.youtube.com/embed/clSIo5WFmbw?si=IJ5PkjsKYFCRIlsQ"
-          title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div class="video-container">
-          <iframe class="video" src="https://www.youtube.com/embed/6JIX2AZtSSk?si=xU3nykDlAqvPOyoT"
-          title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe class="video" src="https://www.youtube.com/embed/oUoFDeSHQe0?si=eOt0wIetBMzexldP"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div class="video-container">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/Vc1Zrsy-cvw?si=uircZBIDW1QNnG7c"
-          title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
+          <iframe class="video" src="https://www.youtube.com/embed/NqLNT_qzYA8?si=nMGpuuZrQJamNgTd"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
         <div class="video-container">
           <iframe class="video" src="https://www.youtube.com/embed/GbWWn4ajElo?si=X2Alef3-sCLVuk4I"
-          title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div class="video-container">
           <iframe class="video" src="https://www.youtube.com/embed/ZubY0nJZeeU?si=2d6_Ip6r_vN2Oygw"
-          title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </section>
-      
+
+      <section class="mainbox" id="offSection">
+        <div class="video-container2">
+          <iframe class="video" src="https://www.youtube.com/embed/GGEaALiuIts?si=EEu-Vk2_T8szK7v7"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-container2">
+          <iframe class="video" src="https://www.youtube.com/embed/XZJmUD0oYfM?si=-81EozcXkVUPlzI2"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+      </section>
+
+
       <section class="subbox">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScE4CkDRIvCnLuJdZsiuY9jXJ7SvviLyhZ_qPhn81tb-X_pvA/viewform" target="_blank">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScE4CkDRIvCnLuJdZsiuY9jXJ7SvviLyhZ_qPhn81tb-X_pvA/viewform"
+          target="_blank">
           <button class="form">오디션 지원하기</button>
         </a>
       </section>
@@ -66,14 +87,40 @@
     <footer>
       <div class="more">about arpeggio</div>
       <div class="button">
-        <a href="https://youtube.com/@kgu_arpeggio?si=PzWAJ19f4bx7nnGq" target="_blank">
+        <a href="https://youtube.com/@kgu_arpeggio" target="_blank">
           <img src="img/youtube.png" alt="YouTube" class="youtube"></a>
-        <a href="https://www.instagram.com/kgu_arpeggio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-          target="_blank">
+        <a href="https://www.instagram.com/kgu_arpeggio" target="_blank">
           <img src="img/instagram.png" alt="Instagram" class="instagram"></a>
       </div>
     </footer>
   </div>
+
+  <script>
+    const onSection = document.getElementById("onSection");
+    const offSection = document.getElementById("offSection");
+    const onBtn = document.getElementById("onBtn");
+    const offBtn = document.getElementById("offBtn");
+
+    function showOn() {
+      onSection.style.display = "flex";
+      offSection.style.display = "none";
+
+      onBtn.classList.add("active");
+      offBtn.classList.remove("active");
+    }
+
+    function showOff() {
+      onSection.style.display = "none";
+      offSection.style.display = "flex";
+
+      offBtn.classList.add("active");
+      onBtn.classList.remove("active");
+    }
+
+    // 처음 로드될 때 ON 활성화
+    showOn();
+  </script>
+
 </body>
 
 </html>

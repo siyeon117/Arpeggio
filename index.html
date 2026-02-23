@@ -73,9 +73,7 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-
       </section>
-
 
       <section class="subbox">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJUBzOnsBO6ikiV5pp7APwHz7zsF-HjJ5Ulna-6GC5XS0IIg/viewform?usp=header"
@@ -83,6 +81,18 @@
           <button class="form">오디션 지원하기</button>
         </a>
       </section>
+
+      <section class="carousel">
+        <div class="carousel-container">
+          <img src="img/2023년봄포스터.jpg" alt="2023년 봄 정기공연" class="poster">
+          <img src="img/2023년가을포스터.jpg" alt="2023년 가을 정기공연" class="poster">
+          <img src="img/2024년봄포스터.jpg" alt="2024년 봄 정기공연" class="poster">
+          <img src="img/2024년가을포스터.jpg" alt="2024년 가을 정기공연" class="poster">
+          <img src="img/2025년봄포스터.jpg" alt="2025년 봄 정기공연" class="poster">
+          <img src="img/2025년가을포스터.jpg" alt="2025년 가을 정기공연" class="poster">
+        </div>
+      </section>
+
     </main>
 
     <footer>
@@ -123,6 +133,51 @@
 
     // 처음 로드될 때 ON 활성화
     showOn();
+
+    const posters = document.querySelectorAll(".poster");
+    let current = 0;
+
+    function updateCarousel() {
+      posters.forEach((poster, index) => {
+        const offset = index - current;
+
+        poster.style.opacity = Math.abs(offset) > 2 ? "0" : "1";
+        poster.style.zIndex = 10 - Math.abs(offset);
+
+        if (offset === 0) {
+          // 가운데
+          poster.style.transform = "translateX(0) scale(1)";
+        }
+        else if (offset === -1) {
+          // 왼쪽 바로 옆
+          poster.style.transform = "translateX(-60%) scale(0.85)";
+        }
+        else if (offset === 1) {
+          // 오른쪽 바로 옆
+          poster.style.transform = "translateX(60%) scale(0.85)";
+        }
+        else if (offset === -2) {
+          poster.style.transform = "translateX(-100%) scale(0.7)";
+        }
+        else if (offset === 2) {
+          poster.style.transform = "translateX(100%) scale(0.7)";
+        }
+      });
+    }
+
+    function nextSlide() {
+      current = (current + 1) % posters.length;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      current = (current - 1 + posters.length) % posters.length;
+      updateCarousel();
+    }
+
+    document.querySelector(".carousel").addEventListener("click", nextSlide);
+
+    updateCarousel();
   </script>
 
 </body>

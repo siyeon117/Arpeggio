@@ -61,13 +61,14 @@
 
       <section class="mainbox" id="offSection">
         <div class="video-container2">
-          <iframe class="video" src="https://www.youtube.com/embed/GGEaALiuIts?si=EEu-Vk2_T8szK7v7?autoplay=1&mute=1"
+          <iframe class="video"
+            src="https://www.youtube.com/embed/GGEaALiuIts?si=EEu-Vk2_T8szK7v7?autoplay=1&mute=1&playsinline=1&rel=0"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div class="video-container2">
-          <iframe class="video" src="https://www.youtube.com/embed/XZJmUD0oYfM?si=-81EozcXkVUPlzI2?autoplay=1&mute=1"
+          <iframe class="video" src="https://www.youtube.com/embed/XZJmUD0oYfM?si=-81EozcXkVUPlzI2"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -115,6 +116,9 @@
 
       offBtn.classList.add("active");
       onBtn.classList.remove("active");
+
+      const video1 = document.getElementById("offVideo1");
+      video1.src = video1.src;
     }
 
     // 처음 로드될 때 ON 활성화

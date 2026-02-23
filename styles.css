@@ -66,32 +66,20 @@
     box-shadow: 0 4px 12px rgba(63, 91, 248, 0.4);
   }
 
-  /* 클릭 애니메이션 */
   .textbox button:active {
     transform: scale(0.95);
   }
 
-  /* 클릭 효과 */
   .textbox button:active {
     transform: scale(0.95);
-  }
-
-  /* OFF 전용 1열 영상 레이아웃 */
-  #offSection {
-    display: none;
-    /* 기본 숨김 유지 */
-    padding-top: 20px;
-    flex-direction: column;
-    align-items: center;
   }
 
   .video-container2 {
     width: 90%;
-    max-width: 400px;
+    max-width: 680px;
     position: relative;
     overflow: hidden;
-    padding-top: 56.25%;
-    /* 🔥 16:9 정확한 비율 */
+    padding-top: 56.5%;
     margin-bottom: 20px;
   }
 
@@ -99,21 +87,16 @@
     padding-top: 20px;
     display: flex;
     flex-direction: row;
-    /* 가로 방향으로 배치 */
     flex-wrap: wrap;
-    /* 콘텐츠가 넘치면 다음 줄로 자동 줄 바꿈 */
     justify-content: center;
-    /* 가로 가운데 정렬 */
   }
 
   .video-container {
     width: 48%;
-    /* 두 개의 비디오가 한 줄에 들어가도록 너비 조정 */
     max-width: 340px;
     position: relative;
     overflow: hidden;
     padding-top: 36.25%;
-    /* 16:9 비율 (9 / 16 * 100) */
     margin-bottom: 2%;
     margin-right: 2%;
   }
@@ -140,7 +123,6 @@
 
   .subbox a {
     text-decoration: none;
-    /* 링크 밑줄 제거 */
   }
 
 
@@ -165,7 +147,6 @@
     padding-bottom: 20px;
     display: flex;
     flex-direction: row;
-    /* 버튼들을 나란히 배치 */
     justify-content: center;
     align-items: center;
   }
@@ -173,7 +154,6 @@
   .button img {
     width: 60px;
     margin: 0 30px;
-    /* 버튼 사이의 간격 */
   }
 
   .button span {

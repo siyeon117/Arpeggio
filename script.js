@@ -39,57 +39,65 @@ offBtn?.addEventListener("click", () => {
 // 초기 상태
 toggleSection(onSection, offSection, onBtn, offBtn);
 
-// SAFE STACK CAROUSEL
+// 포스터
 if (posters.length > 0 && carousel) {
+
     let current = 0;
     let startX = 0;
     let dragOffset = 0;
     let isDragging = false;
 
+    const CARD_WIDTH = 85;
+
     const updateCarousel = (drag = 0) => {
-        const dragRatio = drag / carousel.offsetWidth;
-        const dragOffsetIndex = dragRatio * 1.5;
+
+        const dragOffsetIndex = drag / CARD_WIDTH;
 
         posters.forEach((poster, index) => {
-            let offset = index - current - dragOffsetIndex;
+            let offset = index - current + dragOffsetIndex;
 
-            // 순환 처리
             if (offset > posters.length / 2) offset -= posters.length;
             if (offset < -posters.length / 2) offset += posters.length;
 
-            const absOffset = Math.abs(offset);
+            const abs = Math.abs(offset);
 
-            // 3장 이상 멀어지면 숨김
-            if (absOffset > 3) {
+            if (abs > 3) {
                 poster.style.opacity = "0";
                 return;
             }
 
-            const translateX = offset * 85;
-            const translateZ = -absOffset * 10;
-            const scale = 1 - absOffset * 0.15;
-
             poster.style.transform =
-                `translateX(${translateX}px) translateZ(${translateZ}px) scale(${scale})`;
+                `translateX(${offset * CARD_WIDTH}px)
+                translateZ(${-abs * 10}px)
+                scale(${1 - abs * 0.15})`;
 
-            poster.style.zIndex = 100 - Math.round(absOffset);
+            poster.style.zIndex = 100 - Math.round(abs);
             poster.style.opacity = "1";
-
-            // blur 효과 계산
-            let blur = 0;
-
-            if (absOffset === 1) blur = 2;
-            else if (absOffset === 2) blur = 4;
-            else if (absOffset >= 3) blur = 6;
-
-            poster.style.filter = `blur(${blur}px)`;
+            poster.style.filter =
+                abs === 1 ? "blur(2px)" :
+                    abs === 2 ? "blur(4px)" :
+                        abs >= 3 ? "blur(6px)" :
+                            "blur(0px)";
         });
     };
 
-    const moveSlides = (count) => {
-        current = (current + count + posters.length) % posters.length;
+    const moveSlides = (step) => {
+        current = (current + step + posters.length) % posters.length;
         updateCarousel();
     };
+
+    posters.forEach((poster, index) => {
+        poster.addEventListener("click", () => {
+            let diff = index - current;
+
+            if (diff > posters.length / 2) diff -= posters.length;
+            if (diff < -posters.length / 2) diff += posters.length;
+
+            if (Math.abs(diff) === 1) {
+                moveSlides(diff);
+            }
+        });
+    });
 
     carousel.addEventListener("touchstart", (e) => {
         startX = e.touches[0].clientX;
@@ -98,15 +106,17 @@ if (posters.length > 0 && carousel) {
 
     carousel.addEventListener("touchmove", (e) => {
         if (!isDragging) return;
+
+        e.preventDefault();
         dragOffset = e.touches[0].clientX - startX;
         updateCarousel(dragOffset);
-    });
+    }, { passive: false });
 
     carousel.addEventListener("touchend", () => {
+        if (!isDragging) return;
         isDragging = false;
 
-        const threshold = carousel.offsetWidth * 0.2;
-        const move = Math.round(dragOffset / threshold);
+        const move = Math.round(dragOffset / CARD_WIDTH);
 
         if (move !== 0) {
             moveSlides(-move);

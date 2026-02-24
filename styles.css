@@ -132,6 +132,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    perspective: 1000px;
   }
 
   .carousel-container {
@@ -139,12 +140,13 @@
     margin-top: 10px;
     width: 180px;
     height: 240px;
+    transform-style: preserve-3d;
   }
 
   .poster {
     position: absolute;
     width: 100%;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+    transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
     border-radius: 16px;
     opacity: 0;
     will-change: transform;

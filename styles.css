@@ -144,9 +144,10 @@
   .poster {
     position: absolute;
     width: 100%;
-    transition: all 0.5s ease;
+    transition: transform 0.4s ease, opacity 0.4s ease;
     border-radius: 16px;
     opacity: 0;
+    will-change: transform;
   }
 
   .form {

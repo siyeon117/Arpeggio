@@ -48,7 +48,7 @@
   .textbox button {
     width: 120px;
     height: 40px;
-    margin: 0 10px;
+    margin: 10px 10px;
     border-radius: 20px;
     border: none;
     font-size: 14px;
@@ -64,10 +64,6 @@
     background-color: rgb(63, 91, 248);
     color: white;
     box-shadow: 0 4px 12px rgba(63, 91, 248, 0.4);
-  }
-
-  .textbox button:active {
-    transform: scale(0.95);
   }
 
   .textbox button:active {
@@ -137,7 +133,7 @@
 
   .carousel-container {
     position: relative;
-    margin-top: 10px;
+    margin-top: 30px;
     width: 210px;
     height: 280px;
     transform-style: preserve-3d;
@@ -154,17 +150,48 @@
 
   .form {
     width: 300px;
-    height: 40px;
+    height: 45px;
     margin: 0 auto;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
     text-align: center;
-    background-color: rgb(63, 91, 248);
+
     border-radius: 15px;
-    border: 1px solid rgb(145, 145, 145);
-    color: aliceblue;
+    border: none;
+
+    background: linear-gradient(135deg, rgb(63, 91, 248), rgb(90, 120, 255));
+    color: white;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    box-shadow: 0 4px 12px rgba(63, 91, 248, 0.4);
+
+    transition: all 0.25s ease;
+    cursor: pointer;
+
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.04);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .form:active {
+    transform: scale(0.95);
+    animation: none;
   }
 
   .button {
